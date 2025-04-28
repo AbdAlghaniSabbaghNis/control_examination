@@ -203,30 +203,32 @@ class StudentQrScreen extends GetView<StudentQrCodeController> {
   }
 
   bool setupCheatingDetection({required String? element}) {
-    if (element?.contains('gpt') == true) {
+    if (element?.contains('gpt') == true ||
+        element?.contains('Chatgpt') == true ||
+        element?.contains('Chatgpt.plus') == true ||
+        element?.contains('monica') == true ||
+        element?.contains('Poe') == true ||
+        element?.contains('Gauth') == true) {
       return true;
-    } else if (element?.contains('monica') == true) {
-      return true;
-    } else {
-      false;
     }
     return false;
-    // html.window.addEventListener('visibilitychange', (event) {
-    //   var isInActive = js.context.callMethod('isInActive');
-    //   print('isInActive ${isInActive}');
-    //   if (isInActive) {
-    //     studentInExamController.markStudentCheating();
-    //   }
-    // });
-    //
-    // html.window.addEventListener('blur', (event) {
-    //   studentInExamController.markStudentCheating();
-    // });
-    //
-    // html.window.addEventListener('resize', (event) {
-    //   if (html.window.innerHeight! < 300 || html.window.innerWidth! < 300) {
-    //     studentInExamController.markStudentCheating();
-    //   }
-    // });
   }
+
+  // html.window.addEventListener('visibilitychange', (event) {
+  //   var isInActive = js.context.callMethod('isInActive');
+  //   print('isInActive ${isInActive}');
+  //   if (isInActive) {
+  //     studentInExamController.markStudentCheating();
+  //   }
+  // });
+  //
+  // html.window.addEventListener('blur', (event) {
+  //   studentInExamController.markStudentCheating();
+  // });
+  //
+  // html.window.addEventListener('resize', (event) {
+  //   if (html.window.innerHeight! < 300 || html.window.innerWidth! < 300) {
+  //     studentInExamController.markStudentCheating();
+  //   }
+  // });
 }

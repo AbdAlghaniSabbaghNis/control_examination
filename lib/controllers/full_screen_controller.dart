@@ -88,14 +88,14 @@ class FullScreenController extends GetxController {
   late Timer timer;
   @override
   void onInit() {
-    timer = Timer.periodic(Duration(seconds: 5), (a) {
-      final bodyChildren = html.document.body?.children ?? [];
-      for (final element in bodyChildren) {
-        if (!element.id.contains('flutter')) {
-          studentInExamController.markStudentCheating();
-        }
-      }
-    });
+    // timer = Timer.periodic(Duration(seconds: 5), (a) {
+    //   final bodyChildren = html.document.body?.children ?? [];
+    //   for (final element in bodyChildren) {
+    //     if (!element.id.contains('flutter')) {
+    //       studentInExamController.markStudentCheating();
+    //     }
+    //   }
+    // });
     enterFullScreen().then((value) async {
       html.window.addEventListener('fullscreenchange', (event) {
         if (Hive.box('ExamMission').get('inExam', defaultValue: false)) {
